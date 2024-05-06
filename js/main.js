@@ -1,4 +1,5 @@
 import { getAllRockets } from "./modules/rockets.js";
+import { rocketGeneralInformation } from "./modulesComponents/content.js";
 import { 
     progressRocketWeight, 
     progressPayloadWeights, 
@@ -18,9 +19,11 @@ let [Rockets1, Rockets2, Rockets3, Rockets4] = dataRockets;
 console.log(dataRockets);
 console.log(Totales);
 
-information__2.append(...progressRocketWeight(Totales.kg_max, Rockets3))
-information__2.append(...progressPayloadWeights(Totales.payload_weights, Rockets3))
-information__2.append(...progressHeightRocket(Totales.height, Rockets3))
-information__2.append(...progressDiameterRocket(Totales.diameter, Rockets3))
-information__2.append(...progressSecondStageDiameterRocket(Totales.composite_diameter, Rockets3))
-information__2.append(...progressSecondStageHeightRocket(Totales.composite_height, Rockets3))
+information__2.append(...progressRocketWeight(Totales.kg_max, Rockets4))
+information__2.append(...progressPayloadWeights(Totales.payload_weights, Rockets4))
+information__2.append(...progressHeightRocket(Totales.height, Rockets4))
+information__2.append(...progressDiameterRocket(Totales.diameter, Rockets4))
+information__2.append(...progressSecondStageDiameterRocket(Totales.composite_diameter, Rockets4))
+information__2.append(...progressSecondStageHeightRocket(Totales.composite_height, Rockets4))
+
+information__1.innerHTML = rocketGeneralInformation([Rockets4]); // Pasamos un array con un solo cohete
